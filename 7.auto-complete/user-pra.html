@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Ajax React Class Component </title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+
+    <script type="text/babel">
+    
+    const appHandle = document.getElementById('app');
+
+    function Heading(props){
+        return(
+            <h2>{props.title}</h2>
+        )
+    }
+
+    class Users extends React.Component {
+        constructor(props){
+            super(props);
+            this.state = {
+                users : []
+            }
+        }
+
+        componentDidMount(){
+            axios.get('https://jsonplaceholder.typicode.com/users').then((response) => {
+                this.setState({users : response.data})
+                console.log(this.state.users);
+            })
+        }
+
+        render(){
+            return (
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { this.state.users.map((user,index) => {
+                            return <UserDetail user={user} key={index} /> 
+                        })}
+                    </tbody>
+                </table>
+            )
+        }
+
+    }
+
+    class UserDetail extends React.Component {
+        constructor(props){
+            super(props);
+        }
+        render() {
+            return(
+                <tr>
+                    <td>{this.props.user.id}</td>
+                    <td>{this.props.user.name}</td>
+                    <td>{this.props.user.email}</td>
+                </tr>
+            )
+        }
+
+    }
+        
+    function App(){
+        return (
+            <div>
+                <Heading title="Listing Users"/>
+                <Users/>
+            </div>
+        )
+
+    } 
+    ReactDOM.render(<App/>,appHandle);
+    </script>
+</body>
+</html>

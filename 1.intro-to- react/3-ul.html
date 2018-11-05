@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Introduction to react</title>
+        <script src= "/react/js/react.development.js"></script>
+        <script src="/react/js/react-dom.development.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+    
+        <script>
+           var rootHandle = document.getElementById('root');
+
+        //    const h2 = document.createElement('h2');
+        //    const h2Text = document.createTextNode('Listing Technologies');
+        //    h2.appendChild(h2Text);
+        //    rootHandle.appendChild(h2);
+            
+        //    const ul = document.createElement('ul');
+
+        //    const li = document.createElement('li');
+        //    const liText = document.createTextNode('javascript');
+        //    li.appendChild(liText);
+        //    ul.appendChild(li);
+        //    rootHandle.appendChild(ul);
+
+        const ul = React.createElement('ul',{},React.createElement('li',{},'javascript'),
+                                                React.createElement('li',{},'nodejs'),
+                                                React.createElement('li',{},'React'));
+        
+        ReactDOM.render(ul,rootHandle);
+        </script>
+
+    </body>
+</html>

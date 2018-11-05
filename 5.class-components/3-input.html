@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Hello Component </title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+    <script type="text/babel">
+        const appHandle = document.getElementById('app');
+
+        class Input extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    value: ''
+                }
+            }
+
+            handleChange(e){
+               this.setState({ value: e.target.value}); 
+            }
+
+            render(){
+                return (
+                    <div>
+                        <input type="text" onChange={this.handleChange.bind(this)}/>
+                        
+                        <p> You typed : {this.state.value}</p>
+
+                        <p> You typed : {this.state.value}</p>
+                        <p> You typed : {this.state.value}</p>
+                        <p> You typed : {this.state.value}</p>
+                        <p> You typed : {this.state.value}</p>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Input />, appHandle); 
+
+       
+    </script>
+</body>
+
+</html>

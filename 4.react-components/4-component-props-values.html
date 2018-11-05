@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Components </title>
+    <script src="/react/js/babel.js"></script>
+    <script src="/react/js/react.development.js"></script>
+    <script src= "/react/js/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        const rootHandle = document.getElementById('root');
+
+        function MyComponent(props){
+            return <h2>{props.value}</h2>
+        }
+
+        function MyArray(props) {
+            return <h2> {props.value.join(', ')} </h2>
+        }
+
+        function MyObj(props) {
+            return <h2> {props.value.lastName} </h2>
+        }
+
+        function MyArrObj(props){
+            return <h2> {props.value.map((name,index) => {
+                return <li key ={index}>{name.name} -- {name.city}</li> })} </h2>
+        }
+
+        function MyComponentFunc(props){
+            return <h2>{props.value()}</h2>
+        }
+
+        function App(){
+            return (
+                <div>
+                <MyComponent value = "pavan"/>
+                <MyComponent value= "1"/>
+
+                <MyComponent value = {"pavan"}/>
+                <MyComponent value= {"1"}/>
+
+                <MyArray value = {['js','py','rb']}/>
+
+                <MyObj value = {{firstName : 'pavan'},{lastName : 'kalyan'}} />
+
+                <MyArrObj value = {[{name : 'pavan',city:'chennai'},{name:'kalyan',city:'bangalore'}]} />
+                
+                <MyComponentFunc value = {function(){return 'i am inside the function '}} />
+                </div>
+            )
+        }
+        ReactDOM.render(<App/>,rootHandle)
+    </script>
+    
+</body>
+</html>

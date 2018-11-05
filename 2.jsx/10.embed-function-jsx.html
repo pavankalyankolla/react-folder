@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello React</title>
+    <script src="/react/js/babel.js"></script>
+    <script src="/react/js/react.development.js"></script>
+    <script src= "/react/js/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        var rootHandle = document.getElementById('root');
+        
+        //function can also return jsx
+        function result(marks){
+            if(marks >= 35){
+                return <b><em>Pass</em></b>
+            } else {
+                return <b>Fail</b>
+            }
+        }
+        const p = <p>Result : {result(60)} </p>
+      
+        ReactDOM.render(p,rootHandle);
+    </script>
+</body>
+</html>

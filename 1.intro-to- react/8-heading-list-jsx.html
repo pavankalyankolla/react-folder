@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Introduction to react</title>
+        <script src= "/react/js/react.development.js"></script>
+        <script src="/react/js/react-dom.development.js"></script>
+        <script src="/react/js/babel.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+    
+        <script type="text/babel">
+           var rootHandle = document.getElementById('root');
+        //    const h2 = document.createElement('h2');
+        //    const h2Text = document.createTextNode('Listing Technologies');
+        //    h2.appendChild(h2Text);
+        //    rootHandle.appendChild(h2);
+            
+        //    const ul = document.createElement('ul');
+
+        //    const li = document.createElement('li');
+        //    const liText = document.createTextNode('javascript');
+        //    li.appendChild(liText);
+        //    ul.appendChild(li);
+        //    rootHandle.appendChild(ul);
+
+    //    const div = React.createElement('div',{},
+    //                 React.createElement('h2',{},'listing Technologies'),
+    //                   React.createElement('ul',{},
+    //                     React.createElement('li',{},
+    //                         React.createElement('a',{href : 'https://developer.mozilla.org',target : '_blank'},'Javascript'),
+    //                     React.createElement('li',{},    
+    //                         React.createElement('a',{href : 'http://nodejs.org',target : '_blank'},'reactjs'))
+    //         )
+    //     )
+    // );
+
+    const div = (
+        <div>
+            <h2> Listing Technologies </h2>
+            <ul>
+                <li> <a href = "https://developer.mozilla.org" target = "_blank">Javascript</a> </li>
+                <li> <a href = "http://nodejs.org" target = "_blank">  Nodejs </a> </li>
+            </ul>
+        </div>
+    )
+        
+        ReactDOM.render(div,rootHandle);
+        </script>
+
+    </body>
+</html>

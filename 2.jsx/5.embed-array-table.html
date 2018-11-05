@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello React</title>
+    <script src="/react/js/babel.js"></script>
+    <script src="/react/js/react.development.js"></script>
+    <script src= "/react/js/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        var rootHandle = document.getElementById('root');
+        const technologies = ['js','node','react','express'];
+        
+        const div = (
+            <div>
+               <h2> Listing Technologies </h2>
+                    <table border="1"> 
+                        <thead> 
+                            <tr> 
+                                <th>#</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr> 
+                                <td>1</td>
+                                <td>{technologies[0].toUpperCase()}</td>
+                            </tr>
+                            <tr> 
+                                <td>2</td>
+                                <td>{technologies[1].toUpperCase()}</td>
+                            </tr>
+                            <tr> 
+                                <td>3</td>
+                                <td>{technologies[2].toUpperCase()}</td>
+                            </tr>
+                            <tr> 
+                                <td>4</td>
+                                <td>{technologies[3].toUpperCase()}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+        )
+        ReactDOM.render(div,rootHandle);
+
+    </script>
+</body>
+</html>

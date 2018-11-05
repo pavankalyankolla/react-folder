@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello React</title>
+    <script src="/react/js/babel.js"></script>
+    <script src="/react/js/react.development.js"></script>
+    <script src= "/react/js/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        var rootHandle = document.getElementById('root');
+        
+        const links = [
+            {
+                url : 'http://www.google.com',
+                name : 'google'
+            },
+            {
+                url : 'http://www.facebook.com',
+                name : 'facebook'
+            }
+        ]
+
+        function generateRows(links){
+            return links.map(function(link,index) {
+                return (
+                    <tr key= {index}>
+                        <td>{index + 1}</td>
+                        <td><a href = {link.url} target = "_blank">{link.name}</a></td> 
+                    </tr>
+                )
+            })
+        }
+        const div = (
+            <div>
+                <h2> Listing links - {links.length} </h2>
+                
+                <table border="1"> 
+                    <thead>
+                        <tr> 
+                            <th>#</th>
+                            <th>name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {generateRows(links)}
+                    </tbody>
+               </table>
+            </div>
+        );
+        ReactDOM.render(div,rootHandle);
+
+    </script>
+</body>
+</html>

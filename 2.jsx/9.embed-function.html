@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello React</title>
+    <script src="/react/js/babel.js"></script>
+    <script src="/react/js/react.development.js"></script>
+    <script src= "/react/js/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        var rootHandle = document.getElementById('root');
+        
+        //function is returning a value - primitive/object
+        function add(n1,n2) {
+            return n1+n2;
+        }
+
+        const sub = function(n1,n2){
+            return n1-n2;
+        }
+
+        const h2 = <h2>The sum of 10 and 20 are {add(10,20)} and the difference is {sub(10,20)}</h2>
+        ReactDOM.render(h2,rootHandle);
+    </script>
+</body>
+</html>

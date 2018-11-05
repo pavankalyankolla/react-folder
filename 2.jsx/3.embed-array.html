@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello React</title>
+    <script src="/react/js/babel.js"></script>
+    <script src="/react/js/react.development.js"></script>
+    <script src= "/react/js/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        var rootHandle = document.getElementById('root');
+        const technologies = ['js','node','react','express'];
+        const h1 = <h1> The trending technologies are {technologies[0]} ,{ technologies[1]} , { technologies[2]} & {technologies[3]} - {technologies.join(', ')} </h1>
+        ReactDOM.render(h1,rootHandle);
+
+    </script>
+</body>
+</html>

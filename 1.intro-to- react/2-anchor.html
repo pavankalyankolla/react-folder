@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Introduction to react</title>
+        <script src= "/react/js/react.development.js"></script>
+        <script src="/react/js/react-dom.development.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+    
+        <script>
+            // const rootHandle = document.getElementById('root');
+            // let a = document.createElement('a');
+            // let text = document.createTextNode('visit google');
+            // a.setAttribute('href','http://www.google.com');
+            // a.setAttribute('target','_blank');
+            // a.appendChild(text);
+            // rootHandle.appendChild(a);
+
+            const a = React.createElement('a',{href : 'http://www.google.com',target : '_blank'},'visit google');
+            ReactDOM.render(a,document.getElementById('root'));
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello Component</title>
+    <script src="/react/js/babel.js"></script>
+    <script src="/react/js/react.development.js"></script>
+    <script src= "/react/js/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const appHandle = document.getElementById('app');
+
+        class Hello extends React.Component {
+            render(){
+                return (
+                    <h2>{this.props.msg}</h2>
+                )
+            }
+        }
+        ReactDOM.render(<Hello msg="Hello World"/>,appHandle);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello React</title>
+    <script src="/react/js/babel.js"></script>
+    <script src="/react/js/react.development.js"></script>
+    <script src= "/react/js/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        const rootHandle = document.getElementById('root');
+       
+        const state = {
+            words : 0,
+            chars : 0
+        }
+
+        function handleChange(e){
+            state.chars = e.target.value.length;
+            state.words = e.target.value.split(' ').length-1;
+            renderToDom();
+        }
+
+        function renderToDom(){
+            const div = 
+            <div>
+                <textarea onChange={handleChange}>
+                </textarea>
+                <p> There are totally <b>{state.words} word/s</b> and <b>{state.chars}character/s</b> </p>
+            </div>
+        )
+        
+        ReactDOM.render(div,rootHandle); 
+        }
+        renderToDom()
+        
+    </script>
+    
+</body>
+</html>

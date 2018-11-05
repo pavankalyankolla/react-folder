@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Components </title>
+    <script src="/react/js/babel.js"></script>
+    <script src="/react/js/react.development.js"></script>
+    <script src= "/react/js/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        const rootHandle = document.getElementById('root');
+
+        function Hello(){
+            return <h1>Hello World</h1>
+        }
+        
+        const helloTag = <Hello/>
+        ReactDOM.render(helloTag,rootHandle);
+
+    </script>
+    
+</body>
+</html>

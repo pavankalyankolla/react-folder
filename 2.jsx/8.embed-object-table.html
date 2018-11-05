@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello React</title>
+    <script src="/react/js/babel.js"></script>
+    <script src="/react/js/react.development.js"></script>
+    <script src= "/react/js/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        var rootHandle = document.getElementById('root');
+        
+        const links = [
+            {
+                url : 'http://www.google.com',
+                name : 'google'
+            },
+            {
+                url : 'http://www.facebook.com',
+                name : 'facebook'
+            }
+        ]
+        const div = (
+            <div>
+                <h2> Listing links </h2>
+                
+                <table border="1"> 
+                    <thead>
+                        <tr> 
+                            <th>#</th>
+                            <th>name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td> <a href = {links[0].url} target="_blank"> {links[0].name}</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td> <a href = {links[1].url} target = "_blank"> {links[1].name} </a></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        )
+        ReactDOM.render(div,rootHandle);
+
+    </script>
+</body>
+</html>

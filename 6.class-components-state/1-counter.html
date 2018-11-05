@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello Component</title>
+    <script src="/react/js/babel.js"></script>
+    <script src="/react/js/react.development.js"></script>
+    <script src= "/react/js/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const appHandle = document.getElementById('app');
+
+       class Counter extends React.Component {
+           constructor(props){
+               super(props);
+               this.state = {
+                   count : this.props.value
+               }
+               this.countUp = this.countUp.bind(this);
+               this.countDown = this.countDown.bind(this);
+           }
+           countUp(){
+               this.setState(prevState => ({
+                   count : prevState.count + 1
+               }));
+           }
+           countDown(){
+               this.setState(prevState => ({
+                   count : prevState.count - 1
+               }));
+           }
+
+           render(){
+               return (
+                   <div>
+                    <h2>Counter - {this.state.count}</h2>
+                    <button onClick={this.countUp}>up</button>
+                    <button onClick= {this.countDown}>down</button>
+                    </div>
+               )
+           }
+       }
+       function App() {
+           return (
+               <div>
+                    <Counter value={0}/>
+                    <Counter value={100}/>
+                </div>
+           )
+       }
+       ReactDOM.render(<App/>,appHandle);
+    </script>
+</body>
+</html>
